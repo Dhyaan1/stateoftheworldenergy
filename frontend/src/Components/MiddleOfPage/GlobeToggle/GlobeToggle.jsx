@@ -4,6 +4,7 @@ import co2 from "../../../assets/svg/co2.svg";
 import globe from "../../../assets/svg/globe.svg";
 import sentiment from "../../../assets/svg/sentiment.svg";
 import thermometer from "../../../assets/svg/thermometer.svg";
+import BioFuel from "../../../assets/svg/BioFuel.svg";
 
 function GlobeToggle(props) {
   const changeGlobe = (index) => {
@@ -14,6 +15,7 @@ function GlobeToggle(props) {
     [co2, "HYDRO"],
     [thermometer, "SOLAR"],
     [sentiment, "WIND"],
+    [BioFuel, "BIOFUEL"],
   ].map((button, index) => {
     return (
       <div
