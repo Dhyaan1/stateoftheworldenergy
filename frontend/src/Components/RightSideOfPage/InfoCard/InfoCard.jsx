@@ -114,6 +114,18 @@ function InfoCard(props) {
             {props?.WindData ? props?.WindData?.toFixed(2) + " TWh" : "NA"}
           </span>
         </p>
+
+        <p className="mb-1 font-normal">
+          <strong className="max-lg:text-md max-[860px]:text-sm">
+            Annual Bio Fuel Energy Production:
+          </strong>{" "}
+          <br />
+          <span className="text-green-500 font-semibold text-2xl max-lg:text-xl max-[860px]:text-md">
+            {props?.BioFuelData
+              ? props?.BioFuelData?.toFixed(2) + " TWh"
+              : "NA"}
+          </span>
+        </p>
       </div>
     </>
   );
