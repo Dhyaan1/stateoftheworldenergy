@@ -87,41 +87,31 @@ function InfoCard(props) {
 
         <p className="mb-1 font-normal">
           <strong className="max-lg:text-md max-[860px]:text-sm">
-            CO Concentration:
+            Annual Hydro Power Production:
           </strong>{" "}
           <br />
-          <span className="text-orange-500 font-semibold text-2xl max-lg:text-xl max-[860px]:text-md">
-            {Info?.coconc ? Info.coconc.toFixed(2) + "ppm" : "NA"}
+          <span className="text-blue-400 font-semibold text-2xl max-lg:text-xl max-[860px]:text-md">
+            {props?.HydroData ? props?.HydroData?.toFixed(2) + " TWh" : "NA"}
           </span>
         </p>
 
         <p className="mb-1 font-normal">
           <strong className="max-lg:text-md max-[860px]:text-sm">
-            NO2 Concentration:
+            Annual Solar Energy Production:
           </strong>{" "}
           <br />
-          <span className="text-orange-500 font-semibold text-2xl max-lg:text-xl max-[860px]:text-md">
-            {Info?.no2conc ? Info.no2conc.toFixed(2) + "ppm" : "NA"}
+          <span className="text-yellow-400 font-semibold text-2xl max-lg:text-xl max-[860px]:text-md">
+            {props?.SolarData ? props?.SolarData?.toFixed(2) + " TWh" : "NA"}
           </span>
         </p>
 
         <p className="mb-1 font-normal">
           <strong className="max-lg:text-md max-[860px]:text-sm">
-            O3 Concentration:
+            Annual Wind Power Production:
           </strong>{" "}
           <br />
-          <span className="text-orange-500 font-semibold text-2xl max-lg:text-xl max-[860px]:text-md">
-            {Info?.o3conc ? Info.o3conc.toFixed(2) + "ppm" : "NA"}
-          </span>
-        </p>
-
-        <p className="mb-1 font-normal">
-          <strong className="max-lg:text-md max-[860px]:text-sm">
-            SO2 Concentration:
-          </strong>{" "}
-          <br />
-          <span className="text-orange-500 font-semibold text-2xl max-lg:text-xl max-[860px]:text-md">
-            {Info?.so2conc ? Info.so2conc.toFixed(2) + "ppm" : "NA"}
+          <span className="text-fuchsia-400 font-semibold text-2xl max-lg:text-xl max-[860px]:text-md">
+            {props?.WindData ? props?.WindData?.toFixed(2) + " TWh" : "NA"}
           </span>
         </p>
       </div>

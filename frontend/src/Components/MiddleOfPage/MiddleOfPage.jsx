@@ -10,13 +10,7 @@ function MiddleOfPage(props) {
   return (
     <>
       <div className="text-white flex items-center justify-between flex-col p-2 h-auto max-md:overflow-x-hidden order-2 max-md:order-1 w-3/5 max-md:w-[100lvw] max-md:h-[100lvh] ">
-        <TitleAndMonth
-          currentUpToDate={props.currentUpToDate}
-          setDate={props.setDate}
-          date={props.date}
-          setMonth={props.setMonth}
-          setYear={props.setYear}
-        />
+        <TitleAndMonth />
         <AllGlobes
           UVMap={props.UVMap}
           setCountryCode={props.setCountryCode}

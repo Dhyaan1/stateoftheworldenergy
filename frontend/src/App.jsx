@@ -5,8 +5,9 @@ import MiddleOfPage from "./Components/MiddleOfPage/MiddleOfPage";
 import { useEffect, useState } from "react";
 import data from "./assets/StateOfTheWorldData";
 import { MonthContext } from "./Contexts/MonthData";
-import { co2Context } from "./Contexts/CO2";
 import UVMap from "./assets/textures/earth_1k.jpg";
+import { Hydro, Solar, Wind } from "./Contexts/SuperDummyData";
+// import countryData2 from "../../shared/countries.json";
 
 function App() {
   const [_2020co2, set2020co2] = useState(null);
@@ -42,9 +43,50 @@ function App() {
       });
   }, [countryCode]);
 
+  // useEffect(() => {
+  //   fetch(`${import.meta.env.VITE_SERVER_URL}/hydro`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       set2020hydro(data);
+  //       console.log(data);
+  //     });
+  // }, [countryCode]);
+
+  // const [hardData, setHardData] = useState({});
+
+  // useEffect(() => {
+  //   const processData = () => {
+  //     try {
+  //       const response = {};
+  //       response.countries = countryData2.reduce((acc, curr) => {
+  //         acc[curr.code] = curr["2020wind"];
+  //         return acc;
+  //       }, {});
+  //       response.min = Math.min(...Object.values(response.countries));
+  //       response.max = Math.max(...Object.values(response.countries));
+  //       response.countries.global = 4500;
+
+  //       return response;
+  //     } catch (err) {
+  //       console.log(err);
+  //       return { error: err.message };
+  //     }
+  //   };
+
+  //   const processedData = processData();
+  //   setHardData(processedData);
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log(hardData);
+  // }, [hardData]);
+
   const countryData = data[country];
   const newCountryData = Data ? Data[countryIndexMap[countryCode]] : null;
   const Co2Data = _2020co2 ? _2020co2?.countries[countryCode] : null;
+  const HydroData = Hydro.countries[countryCode];
+  const SolarData = Solar.countries[countryCode];
+  const WindData = Wind.countries[countryCode];
 
   // TODO: Add a loading Spinner/Suspense to the page
 
@@ -55,19 +97,23 @@ function App() {
           newCountryData={newCountryData}
           countryData={countryData}
         />
-        <co2Context.Provider value={_2020co2}>
-          <MiddleOfPage
-            UVMap={UVMap}
-            currentUpToDate={currentUpToDate}
-            setDate={setDate}
-            date={date}
-            setMonth={SetMonth}
-            setCountryCode={setCountryCode}
-            setYear={setYear}
-            newCountryData={newCountryData}
-          />
-          <RightSideOfPage newCountryData={newCountryData} Co2Data={Co2Data} />
-        </co2Context.Provider>
+        <MiddleOfPage
+          UVMap={UVMap}
+          currentUpToDate={currentUpToDate}
+          setDate={setDate}
+          date={date}
+          setMonth={SetMonth}
+          setCountryCode={setCountryCode}
+          setYear={setYear}
+          newCountryData={newCountryData}
+        />
+        <RightSideOfPage
+          newCountryData={newCountryData}
+          Co2Data={Co2Data}
+          HydroData={HydroData}
+          SolarData={SolarData}
+          WindData={WindData}
+        />
       </div>
     </MonthContext.Provider>
   );

@@ -88,10 +88,8 @@ function getColor(data, globe) {
   switch (globe) {
     case 1:
     case 2:
-      [r, g, b] = colorMap(data !== null ? 1 - data : null);
-      break;
     case 3:
-      [r, g, b] = colorMap(data);
+      [r, g, b] = colorMap(data !== null ? 1 - data : null);
       break;
     default:
       [r, g, b] = colorMap(0.5);

@@ -12,6 +12,9 @@ function RightSideOfPage(props) {
         <InfoCard
           newCountryData={props.newCountryData}
           Co2Data={props.Co2Data}
+          HydroData={props.HydroData}
+          SolarData={props.SolarData}
+          WindData={props.WindData}
         />
         {/* Make this responsive */}
         <CreditsCard />

@@ -11,9 +11,9 @@ function GlobeToggle(props) {
   };
   const toggleButtons = [
     [globe, "EARTH"],
-    [thermometer, "TEMPERATURE"],
-    [co2, "EMISSIONS"],
-    [sentiment, "SENTIMENT"],
+    [co2, "HYDRO"],
+    [thermometer, "SOLAR"],
+    [sentiment, "WIND"],
   ].map((button, index) => {
     return (
       <div
