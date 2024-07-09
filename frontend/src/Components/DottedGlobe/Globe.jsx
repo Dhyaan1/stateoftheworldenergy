@@ -89,6 +89,7 @@ function getColor(data, globe) {
     case 1:
     case 2:
     case 3:
+    case 4:
       [r, g, b] = colorMap(data !== null ? 1 - data : null);
       break;
     default:
