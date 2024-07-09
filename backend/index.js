@@ -4,6 +4,9 @@ require("dotenv").config();
 const cors = require("cors");
 const monthsRoute = require("./routes/monthsRoute");
 const co2Route = require("./routes/co2Route");
+const windRoute = require("./routes/windRoute");
+const solarRoute = require("./routes/solarRoute");
+const hydroRoute = require("./routes/hydroRoute");
 const path = require("path");
 
 const app = express();
@@ -24,3 +27,6 @@ app.listen(app.get("port"), () => {
 app.use(cors());
 app.use("/months", monthsRoute);
 app.use("/co2", co2Route);
+app.use("/wind", windRoute);
+app.use("/solar", solarRoute);
+app.use("/hydro", hydroRoute);
