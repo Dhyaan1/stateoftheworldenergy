@@ -2,7 +2,12 @@
 /* eslint-disable react/prop-types */
 import GlobeRender0 from "../GlobeRender0/GlobeRender0";
 import GlobeRender1 from "../GlobeRender1/GlobeRender1";
-import { Hydro, Solar, Wind } from "../../../../Contexts/SuperDummyData";
+import {
+  Hydro,
+  Solar,
+  Wind,
+  BioFuel,
+} from "../../../../Contexts/SuperDummyData";
 import { useState } from "react";
 
 function AllGlobes(props) {
@@ -54,6 +59,19 @@ function AllGlobes(props) {
             data={Wind?.countries}
             min={Wind?.max}
             max={Wind?.min}
+          />
+        )}
+        {props.globe === 4 && (
+          <GlobeRender1
+            loading={{
+              isLoading: isCO2Loading,
+              setIsLoading: setIsCO2Loading,
+            }}
+            globe={props.globe}
+            setCountryCode={props.setCountryCode}
+            data={BioFuel?.countries}
+            min={BioFuel?.max}
+            max={BioFuel?.min}
           />
         )}
       </div>
