@@ -67,4 +67,27 @@ const Wind = {
   max: 466.5,
 };
 
-export { Hydro, Solar, Wind };
+const BioFuel = {
+  countries: {
+    au: 1.4528769,
+    br: 255.50471,
+    ca: 13.782784,
+    cn: 35.036037,
+    de: 39.174717,
+    es: 20.759724,
+    fr: 26.948456,
+    gb: 7.49785,
+    in: 14.32462,
+    it: 10.746551,
+    jp: null,
+    kr: 8.0242,
+    mx: 0.2364856,
+    ru: null,
+    us: 393.43954,
+    global: 685,
+  },
+  min: 1.45,
+  max: 393.43954,
+};
+
+export { Hydro, Solar, Wind, BioFuel };
