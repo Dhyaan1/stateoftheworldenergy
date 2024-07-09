@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import "./GlobeToggle.css";
-import co2 from "../../../assets/svg/co2.svg";
+import Hydro from "../../../assets/svg/Hydro.svg";
 import globe from "../../../assets/svg/globe.svg";
-import sentiment from "../../../assets/svg/sentiment.svg";
-import thermometer from "../../../assets/svg/thermometer.svg";
+import Wind from "../../../assets/svg/Wind.svg";
+import Solar from "../../../assets/svg/Solar.svg";
 import BioFuel from "../../../assets/svg/BioFuel.svg";
 
 function GlobeToggle(props) {
@@ -12,9 +12,9 @@ function GlobeToggle(props) {
   };
   const toggleButtons = [
     [globe, "EARTH"],
-    [co2, "HYDRO"],
-    [thermometer, "SOLAR"],
-    [sentiment, "WIND"],
+    [Hydro, "HYDRO"],
+    [Solar, "SOLAR"],
+    [Wind, "WIND"],
     [BioFuel, "BIOFUEL"],
   ].map((button, index) => {
     return (
