@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import data from "./assets/StateOfTheWorldData";
 import { MonthContext } from "./Contexts/MonthData";
 import UVMap from "./assets/textures/earth_1k.jpg";
-import { Hydro, Solar, Wind } from "./Contexts/SuperDummyData";
+import { Hydro, Solar, Wind, BioFuel } from "./Contexts/SuperDummyData";
 // import countryData2 from "../../shared/countries.json";
 
 function App() {
@@ -87,6 +87,7 @@ function App() {
   const HydroData = Hydro.countries[countryCode];
   const SolarData = Solar.countries[countryCode];
   const WindData = Wind.countries[countryCode];
+  const BioFuelData = BioFuel.countries[countryCode];
 
   // TODO: Add a loading Spinner/Suspense to the page
 
@@ -113,6 +114,7 @@ function App() {
           HydroData={HydroData}
           SolarData={SolarData}
           WindData={WindData}
+          BioFuelData={BioFuelData}
         />
       </div>
     </MonthContext.Provider>
