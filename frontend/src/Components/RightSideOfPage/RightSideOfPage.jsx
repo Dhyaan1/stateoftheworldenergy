@@ -15,6 +15,7 @@ function RightSideOfPage(props) {
           HydroData={props.HydroData}
           SolarData={props.SolarData}
           WindData={props.WindData}
+          BioFuelData={props.BioFuelData}
         />
         {/* Make this responsive */}
         <CreditsCard />
